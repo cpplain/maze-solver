@@ -1,6 +1,7 @@
-from cell import Cell, Point
 from random import choice
+from cell import Cell, Point
 from time import sleep
+
 
 class Maze:
     def __init__(self, x, y, num_rows, num_cols, cell_size_x, cell_size_y, win=None):
@@ -33,10 +34,16 @@ class Maze:
         for indexes in unvisited:
             cell2_i, cell2_j, direction = indexes
             cell2 = self._cells[cell2_i][cell2_j]
-            wall_open = direction == "up" and cell1.has_top_wall == False or \
-                direction == "right" and cell1.has_right_wall == False or \
-                direction == "down" and cell1.has_bottom_wall == False or \
-                direction == "left" and cell1.has_left_wall == False
+            wall_open = (
+                direction == "up"
+                and cell1.has_top_wall == False
+                or direction == "right"
+                and cell1.has_right_wall == False
+                or direction == "down"
+                and cell1.has_bottom_wall == False
+                or direction == "left"
+                and cell1.has_left_wall == False
+            )
             if wall_open:
                 cell1.draw_move(cell2)
                 self._animate()
@@ -77,7 +84,7 @@ class Maze:
             (i - 1, j, "up"),
             (i, j + 1, "right"),
             (i + 1, j, "down"),
-            (i, j - 1, "left")
+            (i, j - 1, "left"),
         ]
         for indexes in test_indexes:
             i, j, _ = indexes
