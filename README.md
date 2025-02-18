@@ -20,6 +20,6 @@ Exit the app by simply closing the window.
 
 A single test was written early in development but broke soon after additional functionality was added. If I return to this project in the future, additional tests will be added and this test fixed.
 
-## Boot.dev
+## Acknowledgments
 
-Checkout [Boot.dev](https://boot.dev) if you're interested in improving your backend development skills by building similar projects.
+Thanks to [Boot.dev](https://boot.dev) for providing most of the learning material used for this project.
